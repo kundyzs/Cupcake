@@ -12,8 +12,8 @@ public class InsertionSort {
           JSONArray cupcakeArray = JSONFile.readArray(fileName);
           String [] cupcakeNameArray = nameArray(cupcakeArray);
           System.out.println(cupcakeNameArray);
+          // print unsorted list
+          System.out.println("----- Unsorted array -----");
+          print(cupcakeNameArray);
           
-
-
-
-}
+          }
