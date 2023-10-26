@@ -16,6 +16,22 @@ public class InsertionSort {
           System.out.println("----- Unsorted array -----");
           print(cupcakeNameArray);
           // sort
-          mergeSort(cupcakeNameArray);
+          InsertionSort(cupcakeNameArray);
+          // print sorted list
+          System.out.println("----- Sorted array----- ");
+          print(cupcakeNameArray);
           
+          System.out.println("----- Statistics -----");
+          System.out.printf("Size of array = %d\n", cupcakeNameArray.length);
+          System.out.printf("Count = %d\n", count);
+        }
+          // print array
+          public static void print(String[] arr) {
+          System.out.printf("Number\tName\n");
+          System.out.printf("------\t---------------\n");
+          for (int i = 0; i < arr.length; i++) {
+          System.out.printf("%04d\t%s\n", i, arr[i]);
           }
+
+          }
+        }
