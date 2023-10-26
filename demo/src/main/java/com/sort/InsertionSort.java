@@ -7,16 +7,19 @@ public class InsertionSort {
 
     public static void main(String[] args) {
         String fileName =
-          "/Users/jerom/Documents/GitHub/class-java/sort/demo/src/main/java/com/sort/cupcake_3906.json";
+          "C:\\Users\\ACER\\Documents\\Cupcake\\demo\\target\\classes\\com\\sort\\cupcake_test_5.json";
 
           JSONArray cupcakeArray = JSONFile.readArray(fileName);
           String [] cupcakeNameArray = nameArray(cupcakeArray);
           System.out.println(cupcakeNameArray);
+
           // print unsorted list
           System.out.println("----- Unsorted array -----");
           print(cupcakeNameArray);
+
           // sort
           performInsertionSort(cupcakeNameArray);
+
           // print sorted list
           System.out.println("----- Sorted array----- ");
           print(cupcakeNameArray);
@@ -25,8 +28,20 @@ public class InsertionSort {
           System.out.printf("Size of array = %d\n", cupcakeNameArray.length);
           System.out.printf("Count = %d\n", count);
         }
-          private static void performInsertionSort(String[] cupcakeNameArray) {
-    }
+        private static void performInsertionSort(String[] cupcakeNameArray) {
+          for (int i = 1; i < cupcakeNameArray.length; i++) {
+              String key = cupcakeNameArray[i];
+              int j = i - 1;
+      
+              while (j >= 0 && cupcakeNameArray[j].compareTo(key) > 0) {
+                  cupcakeNameArray[j + 1] = cupcakeNameArray[j];
+                  j--;
+                  count++; // Increment count for each comparison
+              }
+              cupcakeNameArray[j + 1] = key;
+          }
+      }
+      
           // print cupcake array
           public static void print(String[] cupcakeNameArray) {
           System.out.printf("Number\tName\n");
@@ -35,6 +50,7 @@ public class InsertionSort {
           System.out.printf("%04d\t%s\n", i, cupcakeNameArray[i]);
           }
         }
+      
           // get array of cupcake names
           public static String[] nameArray(JSONArray cupcakeArray) {
           String[] arr = new String[cupcakeArray.size()];
@@ -48,17 +64,16 @@ public class InsertionSort {
           return arr;
         }
           public static int[] sort(int[] arr){
-            for(int i=1; i< arr.length; i++){
+            for(int i=1; i< arr.length; i++) {
               int key= arr[i];
               int j=i-1;
 
               while(j>=0 && arr[j]>key){
                 arr[j+1]=arr[j];
-                j--;
+                j--;  
               }
               arr[j+1]=key;
             }
             return arr;
           }
-
           }
