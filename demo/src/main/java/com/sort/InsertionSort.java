@@ -7,7 +7,7 @@ public class InsertionSort {
 
     public static void main(String[] args) {
         String fileName =
-          "C:\\Users\\ACER\\Documents\\Cupcake\\demo\\target\\classes\\com\\sort\\cupcake_test_5.json";
+          "C:\\Users\\ACER\\Documents\\Cupcake\\demo\\target\\classes\\com\\sort\\cupcake_test_10.json";
 
           JSONArray cupcakeArray = JSONFile.readArray(fileName);
           String [] cupcakeNameArray = nameArray(cupcakeArray);
@@ -36,9 +36,10 @@ public class InsertionSort {
               while (j >= 0 && cupcakeNameArray[j].compareTo(key) > 0) {
                   cupcakeNameArray[j + 1] = cupcakeNameArray[j];
                   j--;
-                  count++; // Increment count for each comparison
+                  count++;
               }
               cupcakeNameArray[j + 1] = key;
+              
           }
       }
       
