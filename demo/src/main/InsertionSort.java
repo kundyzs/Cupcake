@@ -15,5 +15,7 @@ public class InsertionSort {
           // print unsorted list
           System.out.println("----- Unsorted array -----");
           print(cupcakeNameArray);
+          // sort
+          mergeSort(cupcakeNameArray);
           
           }
